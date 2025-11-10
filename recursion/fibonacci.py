@@ -1,7 +1,6 @@
 from functools import lru_cache
 from time import time
 
-
 class Fibonacci:
     def __init__(self):
         self._cache = {0: 0, 1: 1}
