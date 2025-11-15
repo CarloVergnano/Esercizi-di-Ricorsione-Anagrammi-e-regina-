@@ -11,6 +11,9 @@ class DAO:
         per ricerche O(1).
         """
         conn = DBConnect.get_connection()
+        if conn is None:
+            raise ConnectionError("Impossibile connettersi al database. DBConnect.get_connection() ha restituito None.")
+
         cursor = conn.cursor()
 
         query = "SELECT parola FROM parola"  # <-- modifica se la tabella ha nome diverso
