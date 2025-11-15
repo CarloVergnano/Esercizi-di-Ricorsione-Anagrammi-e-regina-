@@ -9,7 +9,14 @@ class Controller:
         self._model = model
 
     def calcola_anagrammi(self, e):
-        pass
+        parola = self._view.txt_word.value
+        if parola == "":
+            self._view.create_alert("Inserisci una parola")
+        else:
+            anagrammi = self._model.calcola_anagrammi(parola)
+            for anagramma in anagrammi:
+                self._view.lst_correct.controls.append(ft.Text(anagramma))
+                self._view.update_page()
 
     def reset(self, e):
         pass
