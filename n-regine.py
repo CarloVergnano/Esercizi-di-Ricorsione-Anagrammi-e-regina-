@@ -56,6 +56,7 @@ class NRegine:
         for soluzione in self._soluzioni:
             for regina in soluzione_nuova:
                 if regina in soluzione:
+                    self._num_soluzioni-=1
                     return False
         return True
 
